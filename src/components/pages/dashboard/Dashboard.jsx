@@ -2,7 +2,6 @@ import { ProductForm } from './products/ProductForm';
 import { ListOfProducts } from './products/ListOfProducts';
 import { CategoryForm } from './categories/CategoryForm';
 import { useState } from 'react'
-import { CarouselForm } from './carousel/CarouselForm';
 import { CarouselPreview } from './carousel/CarouselPreview';
 import { ToggleSection } from './ToggleSection'
 

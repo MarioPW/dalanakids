@@ -7,7 +7,7 @@ export const ProductCardsSkeleton = ({ amount }) => {
 <div key={index} className="flex flex-row w-full h-full p-2 sm:border-b-2 sm:rounded-md sm:shadow-md sm:border sm:flex-col">
   {/* Skeleton for image */}
   <div className="flex items-center w-full h-32 bg-gray-200 sm:w-60 sm:h-72">
-    <div className="w-full h-full"></div>
+    <div className="relative w-full h-full"></div>
   </div>
   
   {/* Skeleton for Product Details */}

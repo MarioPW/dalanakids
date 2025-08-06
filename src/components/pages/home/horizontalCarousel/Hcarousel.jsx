@@ -38,7 +38,7 @@ export const Hcarousel = () => {
   return (
     <>
       <div className="flex items-center justify-center w-full py-2 my-6 bg-blue-100" >
-        <ColorfulWord word="¡NOVEDADES!" size="text-xl sm:text-3xl" />
+        <ColorfulWord size="text-xl sm:text-3xl">¡NOVEDADES!</ColorfulWord>
       </div>
       <Swiper
         spaceBetween={30}

@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const ColorfulWord = ({ word, size }) => {
+export const ColorfulWord = ({ children, size }) => {
   const colors = [
     'text-blue-500',
     'text-yellow-400',
@@ -12,7 +10,7 @@ export const ColorfulWord = ({ word, size }) => {
 
   return (
     <div className="flex space-x-2">
-      {Array.from(word).map((letter, index) => (
+      {Array.from(children).map((letter, index) => (
         <span
           key={index}
           className={`${size} ${colors[index % colors.length]}`}

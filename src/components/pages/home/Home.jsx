@@ -5,7 +5,7 @@ import { MyFooter } from './Footer'
 import { MySideBar } from './sideBar/MySideBar'
 import { jwtDecode } from 'jwt-decode'
 import { useUserContext } from '../../../context/UserContext'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import { ProductServices } from '../../../services/products'
 import { Hcarousel } from './horizontalCarousel/Hcarousel'
 import { ColorfulWord } from '../../utilities/ColorfulWord'
@@ -14,6 +14,8 @@ export const Home = () => {
     const { setUser } = useUserContext()
     const [products, setProducts] = useState([])
     const productServices = new ProductServices()
+    const { category } = useParams()
+
     useEffect(() => {
         const checkLogin = () => {
             const token = localStorage.getItem("token")
@@ -36,14 +38,14 @@ export const Home = () => {
             <div className='w-full'>
                 <Hcarousel />
                 <div className='flex-col block sm:flex'>
-                   <div className="flex items-center justify-center w-full py-2 my-6 bg-yellow-100" >
-                        <ColorfulWord word="CATÁLOGO DE PRODUCTOS" size="text-xl sm:text-3xl" />
+                    <div className="flex items-center justify-center w-full py-2 my-6 bg-yellow-100" >
+                        <ColorfulWord size="text-2xl sm:text-3xl">{category ? category : "Catálogo"}</ColorfulWord>
                     </div>
                     <div className='sm:flex'>
-                    <MySideBar />
-                    <Outlet />
+                        <MySideBar />
+                        <Outlet />
                     </div>
-                    
+
                 </div>
             </div>
             <MyFooter />
